@@ -28,7 +28,7 @@ final class Mock
      *
      * @param class-string<TObject>|TObject $object
      */
-    public function __construct(string | object $object)
+    public function __construct(string $object)
     {
         /** @var TObject|MockInterface $mock */
         $mock = Mockery::mock($object);
@@ -46,7 +46,7 @@ final class Mock
         foreach ($methods as $method => $expectation) {
             /* @phpstan-ignore-next-line */
             $method = $this->mock
-                ->shouldReceive((string) $method)
+                ->shouldReceive((string)$method)
                 ->atLeast()
                 ->once();
 
