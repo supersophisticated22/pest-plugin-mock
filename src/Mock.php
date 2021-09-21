@@ -61,7 +61,7 @@ final class Mock
      *
      * @param array<int, mixed> $arguments
      */
-    public function __call(string $method, array $arguments): mixed
+    public function __call(string $method, array $arguments)
     {
         /* @phpstan-ignore-next-line */
         return $this->mock->{$method}($arguments);
